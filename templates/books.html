@@ -1,0 +1,12 @@
+{% extends 'layout.html' %} {% block content %}
+<h2>Library Collection</h2>
+{% for book in books %}
+<div>
+  <h3>{{ book.title }} by {{ book.author }}</h3>
+  <div>ISBN: {{ book.isbn }}</div>
+  <div>Published: {{ book.published_year }}</div>
+  <div>
+    Status: {% if book.available %} Available {% else %} Borrowed {% endif %}
+  </div>
+</div>
+{% endfor %} {% endblock %}
